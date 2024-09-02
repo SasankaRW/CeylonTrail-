@@ -1,1 +1,22 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"ceylontrail-8921a","appId":"1:959012478505:android:788af11b001406e7b24638","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"ceylontrail-8921a","configurations":{"android":"1:959012478505:android:788af11b001406e7b24638","ios":"1:959012478505:ios:89690288a76e04f6b24638"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "ceylontrail-8921a",
+          "appId": "1:959012478505:android:788af11b001406e7b24638",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "ceylontrail-8921a",
+          "configurations": {
+            "android": "1:959012478505:android:788af11b001406e7b24638",
+            "ios": "1:959012478505:ios:89690288a76e04f6b24638"
+          }
+        }
+      }
+    }
+  }
+}
