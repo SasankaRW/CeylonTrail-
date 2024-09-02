@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "959012478505",
-    "project_id": "ceylontrail-8921a",
-    "storage_bucket": "ceylontrail-8921a.appspot.com"
+    "project_number": "191566489076",
+    "project_id": "ceylontrail-2974a",
+    "storage_bucket": "ceylontrail-2974a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:959012478505:android:788af11b001406e7b24638",
+        "mobilesdk_app_id": "1:191566489076:android:553737f96d20cafc6705a1",
         "android_client_info": {
-          "package_name": "com.geeklords.ceylontrail"
+          "package_name": "com.geeklords.ceylontrails"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAl5dcPLX6yRi9dpeMHcN42SxG1nvVoEkk"
+          "current_key": "AIzaSyDO2SHQzZg6u3TNuWRjOv63FnkCKwBUDjw"
         }
       ],
       "services": {

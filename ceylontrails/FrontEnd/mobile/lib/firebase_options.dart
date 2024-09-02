@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAl5dcPLX6yRi9dpeMHcN42SxG1nvVoEkk',
-    appId: '1:959012478505:android:788af11b001406e7b24638',
-    messagingSenderId: '959012478505',
-    projectId: 'ceylontrail-8921a',
-    storageBucket: 'ceylontrail-8921a.appspot.com',
+    apiKey: 'AIzaSyDO2SHQzZg6u3TNuWRjOv63FnkCKwBUDjw',
+    appId: '1:191566489076:android:553737f96d20cafc6705a1',
+    messagingSenderId: '191566489076',
+    projectId: 'ceylontrail-2974a',
+    storageBucket: 'ceylontrail-2974a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD_NiTb_3FxOL5WPH5kZIlU8LJ7SzzGgSc',
-    appId: '1:959012478505:ios:89690288a76e04f6b24638',
-    messagingSenderId: '959012478505',
-    projectId: 'ceylontrail-8921a',
-    storageBucket: 'ceylontrail-8921a.appspot.com',
-    iosBundleId: 'com.example.ceylontrails',
+    apiKey: 'AIzaSyAsJmId-KaggyZ5gmuzhF6x0hNmtSWRClE',
+    appId: '1:191566489076:ios:7b637db153ebce4b6705a1',
+    messagingSenderId: '191566489076',
+    projectId: 'ceylontrail-2974a',
+    storageBucket: 'ceylontrail-2974a.appspot.com',
+    iosBundleId: 'com.geeklords.ceylontrails',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAVOJ80HJoYa4YexgzBnStHzysvlX4kM8Y',
+    appId: '1:191566489076:web:55ad56f7560b01f76705a1',
+    messagingSenderId: '191566489076',
+    projectId: 'ceylontrail-2974a',
+    authDomain: 'ceylontrail-2974a.firebaseapp.com',
+    storageBucket: 'ceylontrail-2974a.appspot.com',
+    measurementId: 'G-R7RGD14E11',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAsJmId-KaggyZ5gmuzhF6x0hNmtSWRClE',
+    appId: '1:191566489076:ios:7b637db153ebce4b6705a1',
+    messagingSenderId: '191566489076',
+    projectId: 'ceylontrail-2974a',
+    storageBucket: 'ceylontrail-2974a.appspot.com',
+    iosBundleId: 'com.geeklords.ceylontrails',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyAVOJ80HJoYa4YexgzBnStHzysvlX4kM8Y',
+    appId: '1:191566489076:web:7c57ed13d226fc796705a1',
+    messagingSenderId: '191566489076',
+    projectId: 'ceylontrail-2974a',
+    authDomain: 'ceylontrail-2974a.firebaseapp.com',
+    storageBucket: 'ceylontrail-2974a.appspot.com',
+    measurementId: 'G-FWZKZ80L02',
+  );
+
 }
