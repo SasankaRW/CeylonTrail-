@@ -10,13 +10,13 @@ def objectid_to_str(object_id: ObjectId) -> str:
 class Visa(BaseModel):
     _id: Optional[str] = Field(default=None, alias="_id")
     user_id: str
-    issue_date: Optional[datetime] = None
-    expiration_date: Optional[datetime] = None
-    address: Optional[str] = None
-    approved_officer: Optional[str] = None
+    issue_date: [datetime] = None # type: ignore
+    expiration_date: [datetime] = None # type: ignore
+    address: [str] = None # type: ignore
+    approved_officer: Optional[str] = None 
     approved_status: Optional[str] = None
     decision_date: Optional[datetime] = None
-    dob: Optional[datetime] = None  # Date of Birth
+    dob: [datetime] = None  # Date of Birth # type: ignore
     gender_id: Optional[str] = None
     mobile_number: Optional[str] = None
     nationality: Optional[str] = None

@@ -9,7 +9,7 @@ def objectid_to_str(object_id: ObjectId) -> str:
 
 class Lodging(BaseModel):
     _id: Optional[str] = Field(default=None, alias="_id")
-    destination_id: Optional[str] = Field(default=None, alias="destination_id")
+    destination_id: [str] = Field(default=None, alias="destination_id")
     name: str
     location: str
     price: float

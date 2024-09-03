@@ -8,7 +8,7 @@ def objectid_to_str(object_id: ObjectId) -> str:
     return str(object_id)
 
 class ItineraryItem(BaseModel):
-    destination_id: Optional[str] = None
+    destination_id: [str] = None
     event_id: Optional[str] = None
     lodging_id: Optional[str] = None
     transportation_id: Optional[str] = None
