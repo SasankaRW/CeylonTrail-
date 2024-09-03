@@ -1,5 +1,10 @@
 import React from "react";
+import Login from "./Login";
 
 export default function Main() {
-  return <div>Main</div>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
