@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 from typing import AsyncGenerator
 
+
+
+
 # Load environment variables from .env file
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '../.env'))
 
@@ -38,5 +41,10 @@ async def shutdown_event():
 @app.get("/items/{item_id}")
 async def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
+
+
+
+
+# app.include_router(user_controller.router, prefix="/api/v1/users", tags=["users"])
 
 
