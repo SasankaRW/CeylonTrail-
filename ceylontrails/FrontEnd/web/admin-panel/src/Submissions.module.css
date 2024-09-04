@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "outfit";
+  src: url("../src/fonts/outfit.ttf");
+}
+
+.logoName {
+  font-family: "outfit";
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding-left: 25px;
+}
+
+.welcomeTxt {
+  font-family: "outfit";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.adminDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  padding-right: 25px;
+  padding-top: 10px;
+  font-family: "outfit";
+}
