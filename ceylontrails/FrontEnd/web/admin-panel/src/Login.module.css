@@ -58,6 +58,64 @@
   transform: scale(1.05);
 }
 
-.inputField{
-    
+.inputField {
+  border: #0acf83 2px solid;
+  width: 86%;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.inputField label {
+  font-size: 0.8rem;
+  color: #afafaf;
+}
+
+.userInputContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.userInput {
+  width: 90%;
+  border: none;
+  outline: none;
+  font-family: "outfit";
+  font-size: 0.95rem;
+}
+
+.loginBtnSection {
+  height: 100px;
+  display: flex;
+  justify-content: end;
+}
+
+.loginBtn {
+  background-color: #0acf83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 20%;
+  height: 10px;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.loginBtn:hover {
+  transform: scale(0.95);
 }

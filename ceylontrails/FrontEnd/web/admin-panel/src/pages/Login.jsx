@@ -11,6 +11,11 @@ import logo from "../assets/images/logos/ceylonTrail_logo.png";
 import sl_Logo from "../assets/images/logos/sl_Logo.png";
 // logo image
 
+// icons
+import envelopIcon from "../assets/images/icons/envelop.png";
+import lockIcon from "../assets/images/icons/lock.png";
+// icons
+
 export default function Login() {
   return (
     <div className={styles.mainBackground}>
@@ -36,12 +41,16 @@ export default function Login() {
                 </div>
                 {/* side image */}
               </Grid>
-              <Grid container size={8} sx={{ height: "90vh" }}>
+              <Grid
+                container
+                size={8}
+                sx={{ height: "90vh"}}
+              >
                 <Grid
                   size={8}
                   sx={{
                     display: "flex",
-                    justifyContent: "center",
+                    justifyContent: "end",
                     alignItems: "start",
                     flexDirection: "column",
                     height: "40vh",
@@ -84,19 +93,49 @@ export default function Login() {
                   sx={{
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "center",
+                    alignItems: "end",
                     height: "40vh",
                   }}
                 >
                   <img src={sl_Logo} alt="sl logo" width={140} />
                 </Grid>
-                <Grid size={1} />
                 {/* login fields */}
-                <Grid size={10} sx={{ height: "300px" }}>
-                  <div className={styles.inputField}></div>
-                  <div className={styles.passportField}></div>
+                <Grid
+                  size={12}
+                  sx={{
+                    gap: 3,
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div className={styles.inputField}>
+                    <div className={styles.userInputContainer}>
+                      <label>EMAIL ADDRESS</label>
+                      <input className={styles.userInput} type="email" />
+                    </div>
+                    <div className={styles.iconContainer}>
+                      <img src={envelopIcon} width={25} />
+                    </div>
+                  </div>
+                  <div className={styles.inputField}>
+                    <div className={styles.userInputContainer}>
+                      <label>PASSWORD</label>
+                      <input className={styles.userInput} type="password" />
+                    </div>
+                    <div className={styles.iconContainer}>
+                      <img src={lockIcon} width={20} />
+                    </div>
+                  </div>
                 </Grid>
                 {/* login fields */}
+                {/* login button section */}
+                <Grid size={11}>
+                  <div className={styles.loginBtnSection}>
+                    <div className={styles.loginBtn}>Login</div>
+                  </div>
+                </Grid>
+                {/* login button section */}
               </Grid>
             </Grid>
           </div>
