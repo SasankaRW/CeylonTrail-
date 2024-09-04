@@ -3,6 +3,31 @@
   src: url("../src/fonts/outfit.ttf");
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  font-family: "outfit";
+}
+
 .logoName {
   font-family: "outfit";
   display: flex;
@@ -30,4 +55,141 @@
   padding-right: 25px;
   padding-top: 10px;
   font-family: "outfit";
+}
+
+.breadcrumbSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 1.5vw;
+  gap: 5px;
+}
+
+.visaSearchbarContainer {
+  border: 2px solid rgb(203, 203, 203);
+  height: 5vh;
+  margin-top: 3vh;
+  width: 30vh;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 300ms;
+}
+
+.visaSearchbarContainer:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transform: scale(1.02);
+}
+
+.visaSearchbarContainer img {
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.visaSearchbarContainer img:hover {
+  transform: scale(1.05);
+}
+
+.visaSearch {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: #0acf83;
+}
+
+/* Apply the font to the entire table */
+.paperTable,
+.paperTable th,
+.paperTable td {
+  font-family: "outfit";
+}
+
+/* Additional styling to ensure the font is applied uniformly */
+.paperTable th,
+.paperTable td {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.customTableHead {
+  background-color: #f5f5f5;
+}
+
+.customTableBody {
+  background-color: #ffffff;
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  font-weight: 600;
+}
+
+.userId {
+  font-size: 0.85rem;
+  color: #999999;
+}
+
+.tableRowHover {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+}
+
+.tableRowHover:hover {
+  border-right: 2px #0acf83 solid;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transform: scale(0.99);
+  cursor: pointer;
+}
+
+.visaStatusContainer {
+  background-color: rgba(255, 128, 128, 0.4);
+  background-color: rgba(255, 170, 73, 0.4);
+  background-color: rgba(90, 252, 69, 0.4);
+  border-radius: 100px;
+  width: 100%;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.visaStatus {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  gap: 10px;
+}
+
+.visaApproved {
+  background-color: rgba(87, 217, 70, 0.4);
+  color: #009059;
+}
+.visaPending {
+  background-color: rgba(251, 217, 48, 0.315);
+  color: #906c00;
+}
+.visaDeclined {
+  background-color: rgba(255, 131, 131, 0.3);
+  color: #ca1e00;
+}
+
+.fixedBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
 }
