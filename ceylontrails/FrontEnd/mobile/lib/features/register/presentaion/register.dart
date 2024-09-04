@@ -1,6 +1,8 @@
 import 'package:ceylontrails/components/input_field.dart';
 import 'package:ceylontrails/components/outline_button.dart';
 import 'package:ceylontrails/features/login/presentaion/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -15,6 +17,57 @@ class _RegisterState extends State<Register> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
+
+  Future<void> signUp(BuildContext context) async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+    try {
+      if (password.text == confirmPassword.text) {
+        UserCredential userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email.text,
+          password: password.text,
+        );
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userCredential.user!.uid)
+            .set({
+          'fullName': fullName.text,
+          'email': email.text,
+        });
+
+        fullName.clear();
+        email.clear();
+        password.clear();
+        confirmPassword.clear();
+
+        invalidLoginAlert("Registered successfully");
+        Navigator.pop(context);
+        Navigator.pop(context);
+      } else {
+        invalidLoginAlert("Passwords don't match");
+      }
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      invalidLoginAlert(e.code);
+    }
+  }
+
+  void invalidLoginAlert(String text) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(text),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +187,7 @@ class _RegisterState extends State<Register> {
                       ),
                       OutlineButton(
                         text: "Register",
-                        onPressed: () => {},
+                        onPressed: () => {signUp(context)},
                         height: 50,
                         fontSize: 18,
                       ),
@@ -234,7 +287,7 @@ class _RegisterState extends State<Register> {
                         ],
                       ),
                       const SizedBox(
-                        height: 40,
+                        height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

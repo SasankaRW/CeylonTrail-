@@ -1,7 +1,7 @@
 import 'package:ceylontrails/components/fill_button.dart';
 import 'package:ceylontrails/components/input_field.dart';
-import 'package:ceylontrails/features/home/presentation/home.dart';
 import 'package:ceylontrails/features/register/presentaion/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -16,9 +16,50 @@ class _LoginState extends State<Login> {
   TextEditingController password = TextEditingController();
 
   @override
+  void initState(){
+    super.initState();
+    email.text = "testuser@gmail.com";
+    password.text = "test123";
+  }
+
+  Future<void> signUserIn(BuildContext context) async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
+      Navigator.pop(context);
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      if (e.code == 'user-not-found') {
+        invalidLoginAlert("Incorrect Email");
+      } else if (e.code == 'wrong-password') {
+        invalidLoginAlert("Incorrect Password");
+      }
+    }
+  }
+
+  void invalidLoginAlert(String text) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(text),
+          );
+        });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: Stack(
@@ -101,10 +142,7 @@ class _LoginState extends State<Login> {
                       ),
                       FillButton(
                         text: "Log in",
-                        onPressed: () => {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => const Home()))
-                        },
+                        onPressed: () => signUserIn(context),
                         height: 50,
                         fontSize: 18,
                       ),
@@ -204,7 +242,7 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                       const SizedBox(
-                        height: 40,
+                        height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
