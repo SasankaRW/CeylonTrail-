@@ -41,11 +41,7 @@ export default function Login() {
                 </div>
                 {/* side image */}
               </Grid>
-              <Grid
-                container
-                size={8}
-                sx={{ height: "90vh"}}
-              >
+              <Grid container size={8} sx={{ height: "90vh" }}>
                 <Grid
                   size={8}
                   sx={{
@@ -97,7 +93,7 @@ export default function Login() {
                     height: "40vh",
                   }}
                 >
-                  <img src={sl_Logo} alt="sl logo" width={140} />
+                  <img src={sl_Logo} alt="sl_logo" width={140} />
                 </Grid>
                 {/* login fields */}
                 <Grid
@@ -115,7 +111,7 @@ export default function Login() {
                       <input className={styles.userInput} type="email" />
                     </div>
                     <div className={styles.iconContainer}>
-                      <img src={envelopIcon} width={25} />
+                      <img src={envelopIcon} width={25} alt="envelopIcon" />
                     </div>
                   </div>
                   <div className={styles.inputField}>
@@ -124,7 +120,7 @@ export default function Login() {
                       <input className={styles.userInput} type="password" />
                     </div>
                     <div className={styles.iconContainer}>
-                      <img src={lockIcon} width={20} />
+                      <img src={lockIcon} width={20} alt="lockIcon" />
                     </div>
                   </div>
                 </Grid>
