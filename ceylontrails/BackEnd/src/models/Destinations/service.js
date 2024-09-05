@@ -1,4 +1,4 @@
-const Destination = require("./Destination"); // Mongoose model
+const Destination = require("./destination"); // Mongoose model
 
 const { to, TE } = require("../../helper");
 

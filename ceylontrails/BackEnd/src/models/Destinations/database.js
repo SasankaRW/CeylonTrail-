@@ -1,4 +1,4 @@
-const Destination = require("./Destination");
+const Destination = require("./destination");
 const mongoose = require("mongoose");
 
 // Create a single record (destination)

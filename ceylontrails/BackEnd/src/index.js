@@ -22,12 +22,9 @@ app.use(bodyParser.json(JSON_PARSER));
 
 app.use(bodyParser.urlencoded(URLENCODED));
 
-app.use(cookieParser());
-
 app.use(accessHeader);
 
 app.use("/api", router);
 
-generateTables();
 
 module.exports = app;

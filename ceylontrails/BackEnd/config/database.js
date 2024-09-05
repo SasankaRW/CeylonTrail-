@@ -5,21 +5,17 @@ const { APPLICATION } = require('./config');
 const mongoURI = APPLICATION.MONGODB_URI;
 
 // Connect to MongoDB
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+require('dotenv').config();
 
-// Get the connection
-const db = mongoose.connection;
-
-// Handle connection events
-db.on('error', (err) => {
-  console.error('MongoDB connection error:', err);
-});
-
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-});
+const db = async () => {
+  try {
+    const uri = process.env.MONGO_URI || 'mongodb+srv://ecolanka:sasankamadubaj@ecolanka.5eexz.mongodb.net/';
+    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log('MongoDB Connected');
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
+  }
+};
 
 module.exports = db;
