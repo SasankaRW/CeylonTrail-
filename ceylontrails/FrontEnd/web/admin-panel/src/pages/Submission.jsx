@@ -277,181 +277,174 @@ export default function Submission() {
   // pagination
 
   return (
-    <div>
-      <Grid container>
-        {/* navbar */}
-        <Grid
-          size={12}
-          container
-          sx={{ height: "8vh", boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px" }}
-        >
-          {/* logo and name */}
-          <Grid size={3}>
-            <div className={styles.logoName}>
-              <img src={logo} alt="logo" width={30} />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "baseline",
-                  gap: 5,
-                }}
-              >
-                <span style={{ fontWeight: "550", fontSize: "1.2rem" }}>
-                  Ceylon Trail
-                </span>
-                <span style={{ fontWeight: "750", fontSize: "0.6rem" }}>
-                  {" "}
-                  LK
-                </span>
-              </div>
+    <Grid container>
+      {/* navbar */}
+      <Grid
+        size={12}
+        container
+        sx={{ height: "8vh", boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px" }}
+      >
+        {/* logo and name */}
+        <Grid size={3}>
+          <div className={styles.logoName}>
+            <img src={logo} alt="logo" width={30} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "baseline",
+                gap: 5,
+              }}
+            >
+              <span style={{ fontWeight: "550", fontSize: "1.2rem" }}>
+                Ceylon Trail
+              </span>
+              <span style={{ fontWeight: "750", fontSize: "0.6rem" }}> LK</span>
             </div>
-          </Grid>
-          {/* logo and name */}
-          {/* welcome text */}
-          <Grid size={6}>
-            <div className={styles.welcomeTxt}>
-              <span>Welcome to the Dashboard</span>
-            </div>
-          </Grid>
-          {/* welcome text */}
-          {/* admin profile */}
-          <Grid size={3}>
-            <div className={styles.adminDetails}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "start",
-                  alignItems: "end",
-                }}
-              >
-                <span style={{ fontSize: "1rem" }}>Dinul Perera</span>
-                <span
-                  style={{ fontSize: "0.9rem", color: "rgb(170, 170, 170)" }}
-                >
-                  admin
-                </span>
-              </div>
-              <div>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={profilePic2}
-                  sx={{ width: 46, height: 46 }}
-                />
-              </div>
-            </div>
-          </Grid>
-          {/* admin profile */}
+          </div>
         </Grid>
-        {/* navbar */}
-
-        {/* topic and searchbar */}
-        <Grid size={12} container sx={{ height: "10vh" }}>
-          <Grid size={3} className={styles.breadcrumbSection}>
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link underline="hover" color="inherit" href="/">
-                submissions
-              </Link>
-              <Link underline="hover" color="inherit" href="/"></Link>
-            </Breadcrumbs>
-            <span style={{ fontSize: "1.2rem" }}>Visa Submissions</span>
-          </Grid>
-          <Grid size={6} />
-          <Grid
-            size={3}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-            }}
-          >
-            <div className={styles.visaSearchbarContainer}>
-              <input
-                placeholder="Search by Visa Id"
-                className={styles.visaSearch}
+        {/* logo and name */}
+        {/* welcome text */}
+        <Grid size={6}>
+          <div className={styles.welcomeTxt}>
+            <span>Welcome to the Dashboard</span>
+          </div>
+        </Grid>
+        {/* welcome text */}
+        {/* admin profile */}
+        <Grid size={3}>
+          <div className={styles.adminDetails}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "end",
+              }}
+            >
+              <span style={{ fontSize: "1rem" }}>Dinul Perera</span>
+              <span style={{ fontSize: "0.9rem", color: "rgb(170, 170, 170)" }}>
+                admin
+              </span>
+            </div>
+            <div>
+              <Avatar
+                alt="Remy Sharp"
+                src={profilePic2}
+                sx={{ width: 46, height: 46 }}
               />
-              <img alt="search_icon" src={search} />
             </div>
-          </Grid>
+          </div>
         </Grid>
-        {/* topic and searchbar */}
-
-        {/* submission list */}
-        <Grid size={1} />
-        <Grid
-          size={12}
-          container
-          sx={{ paddingLeft: "20px", paddingRight: "20px", paddingTop: "20px" }}
-        >
-          <Grid size={12} container sx={{ height: "75vh" }}>
-            <TableContainer sx={{ maxHeight: "70vh" }}>
-              <Table stickyHeader aria-label="sticky table">
-                <TableHead>
-                  <TableRow>
-                    {columns.map((column) => (
-                      <TableCell
-                        sx={{ border: "none" }}
-                        key={column.id}
-                        align={column.align}
-                        style={{
-                          minWidth: column.minWidth,
-                          fontWeight: "500",
-                          fontFamily: "Outfit",
-                          color: "#999999",
-                        }}
-                      >
-                        {column.label}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody className={styles.customTableBody}>
-                  {rows
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row) => (
-                      <TableRow
-                        role="checkbox"
-                        tabIndex={-1}
-                        key={row.code}
-                        className={styles.tableRowHover}
-                      >
-                        {columns.map((column) => {
-                          const value = row[column.id];
-                          return (
-                            <TableCell
-                              sx={{ borderBottom: "none" }}
-                              key={column.id}
-                              align={column.align}
-                              style={{ fontFamily: "Outfit" }}
-                            >
-                              {column.format && typeof value === "number"
-                                ? column.format(value)
-                                : value}
-                            </TableCell>
-                          );
-                        })}
-                      </TableRow>
-                    ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-            <Grid size={12} className={styles.fixedBottom}>
-              <TablePagination
-                rowsPerPageOptions={[10, 25, 100]}
-                component="div"
-                count={rows.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-        {/* submission list */}
+        {/* admin profile */}
       </Grid>
-    </div>
+      {/* navbar */}
+
+      {/* topic and searchbar */}
+      <Grid size={12} container sx={{ height: "10vh" }}>
+        <Grid size={3} className={styles.breadcrumbSection}>
+          <Breadcrumbs aria-label="breadcrumb">
+            <Link underline="hover" color="inherit" href="/">
+              submissions
+            </Link>
+            <Link underline="hover" color="inherit" href="/"></Link>
+          </Breadcrumbs>
+          <span style={{ fontSize: "1.2rem" }}>Visa Submissions</span>
+        </Grid>
+        <Grid size={6} />
+        <Grid
+          size={3}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <div className={styles.visaSearchbarContainer}>
+            <input
+              placeholder="Search by Visa Id"
+              className={styles.visaSearch}
+            />
+            <img alt="search_icon" src={search} />
+          </div>
+        </Grid>
+      </Grid>
+      {/* topic and searchbar */}
+
+      {/* submission list */}
+      <Grid size={1} />
+      <Grid
+        size={12}
+        container
+        sx={{ paddingLeft: "20px", paddingRight: "20px", paddingTop: "20px" }}
+      >
+        <Grid size={12} container sx={{ height: "75vh" }}>
+          <TableContainer sx={{ maxHeight: "70vh" }}>
+            <Table stickyHeader aria-label="sticky table">
+              <TableHead>
+                <TableRow>
+                  {columns.map((column) => (
+                    <TableCell
+                      sx={{ border: "none" }}
+                      key={column.id}
+                      align={column.align}
+                      style={{
+                        minWidth: column.minWidth,
+                        fontWeight: "500",
+                        fontFamily: "Outfit",
+                        color: "#999999",
+                      }}
+                    >
+                      {column.label}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody className={styles.customTableBody}>
+                {rows
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row) => (
+                    <TableRow
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.code}
+                      className={styles.tableRowHover}
+                    >
+                      {columns.map((column) => {
+                        const value = row[column.id];
+                        return (
+                          <TableCell
+                            sx={{ borderBottom: "none" }}
+                            key={column.id}
+                            align={column.align}
+                            style={{ fontFamily: "Outfit" }}
+                          >
+                            {column.format && typeof value === "number"
+                              ? column.format(value)
+                              : value}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Grid size={12} className={styles.fixedBottom}>
+            <TablePagination
+              rowsPerPageOptions={[10, 25, 100]}
+              component="div"
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+      {/* submission list */}
+    </Grid>
   );
 }

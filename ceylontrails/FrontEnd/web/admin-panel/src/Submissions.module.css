@@ -144,7 +144,6 @@
 }
 
 .tableRowHover:hover {
-  border-right: 2px #0acf83 solid;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transform: scale(0.99);
   cursor: pointer;

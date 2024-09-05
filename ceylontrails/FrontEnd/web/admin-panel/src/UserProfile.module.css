@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "outfit";
+  src: url("../src/fonts/outfit.ttf");
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  font-family: "outfit";
+}
+
+.logoName {
+  font-family: "outfit";
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding-left: 25px;
+}
+
+.welcomeTxt {
+  font-family: "outfit";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.adminDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  padding-right: 25px;
+  padding-top: 10px;
+  font-family: "outfit";
+}
+
+.breadcrumbSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 1.5vw;
+  gap: 5px;
+}
+
+.userProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.userName {
+  font-size: 1.2rem;
+}
+
+.userId {
+  font-size: 0.9rem;
+  color: #b1b1b1;
+}
+
+.userDetails {
+  border: 1px solid rgb(214, 214, 214);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  width: 100%;
+  height: 75vh;
+}
+
+.passportDetails {
+  border: 1px solid rgb(214, 214, 214);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.approveBtn {
+  background-color: #0acf83;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 210px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  transition-duration: 400ms;
+}
+
+.approveBtn:hover {
+  transform: scale(1.04);
+}
+
+.backBtn {
+  border: 2px solid #0acf83;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 210px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 7px;
+  color: #0acf83;
+  cursor: pointer;
+  transition-duration: 400ms;
+}
+
+.backBtn:hover {
+  transform: scale(1.04);
+}
+
+.passportPicContainer {
+  background-color: rgba(10, 207, 131, 0.163);
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition-duration: 400ms;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.passportPicContainer:hover {
+  transform: scale(1.05);
+}
+
+.tripHistory {
+  border: 1px solid rgb(214, 214, 214);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
+  width: 100%;
+  height: 30vh;
+  background-color: red;
+}
+
+.tripHistoryHeader {
+  background-color: #0acf83;
+  width: 100%;
+  height: 6vh;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.tableRowHover {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+}
+
+.tableRowHover:hover {
+  background-color: rgba(10, 207, 131, 0.233);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transform: scale(0.99);
+  cursor: pointer;
+}
+
