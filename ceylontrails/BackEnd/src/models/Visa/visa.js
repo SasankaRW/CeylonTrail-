@@ -89,7 +89,7 @@ const visaSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "visas",
+    collection: "Visa",
   }
 );
 
