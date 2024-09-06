@@ -23,10 +23,10 @@ const getAllVisaRequests = async (params) => {
 };
 
 const createVisaRequest = async (data) => {
-  const interpolCheck = await checkInterpolNotice(data.passport_no);
-  if (interpolCheck && interpolCheck.found) {
-    TE("Interpol has a notice on this passport");
-  }
+  // const interpolCheck = await checkInterpolNotice(data.passport_no);
+  // if (interpolCheck && interpolCheck.found) {
+  //   TE("Interpol has a notice on this passport");
+  // }
 
   const createSingleRecord = Visa.create(data);
   const [err, result] = await to(createSingleRecord);

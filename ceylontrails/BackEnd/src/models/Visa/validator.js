@@ -1,41 +1,31 @@
 const Joi = require("joi");
-const { VALIDATION_ERROR } = require("../../helper");
 
-const destinationSchema = Joi.object({
-  name: Joi.string().required().trim(),
-  description: Joi.string().required().trim(),
-  image: Joi.string().required().trim(),
-  address: Joi.string().required().trim(),
-  category_tags: Joi.array().items(Joi.string()).default([]),
+const createVisaSchema = Joi.object({
+  first_name: Joi.string(),
+  last_name: Joi.string(),
+  passport_no: Joi.string(),
+  dob: Joi.date(),
+  mobile_number: Joi.string(),
+  nationality: Joi.string(),
 });
 
-const create = async (req, res, next) => {
-  try {
-    await destinationSchema.validateAsync(req.body);
-    next();
-  } catch (error) {
-    VALIDATION_ERROR(res, error);
-  }
+const approveVisaSchema = Joi.object({
+  approved_officer: Joi.string(),
+});
+
+const create = (req, res, next) => {
+  const { error } = createVisaSchema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+  next();
 };
 
-const updateSchema = Joi.object({
-  name: Joi.string().trim(),
-  description: Joi.string().trim(),
-  image: Joi.string().trim(),
-  address: Joi.string().trim(),
-  category_tags: Joi.array().items(Joi.string()),
-});
-
-const update = async (req, res, next) => {
-  try {
-    await updateSchema.validateAsync(req.body);
-    next();
-  } catch (error) {
-    VALIDATION_ERROR(res, error);
-  }
+const approve = (req, res, next) => {
+  const { error } = approveVisaSchema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+  next();
 };
 
 module.exports = {
   create,
-  update,
+  approve,
 };
