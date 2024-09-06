@@ -1,6 +1,6 @@
 const _setCode = (code, httpCode) => ({
-  code: code, 
-  hc: httpCode, 
+  code: code,
+  hc: httpCode,
 });
 
 const Codes = {
