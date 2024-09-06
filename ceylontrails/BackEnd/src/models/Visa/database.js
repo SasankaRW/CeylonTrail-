@@ -19,10 +19,10 @@ const findAllVisaRecords = async () => {
 };
 
 const find = async () => {
-  console.log("dataaaa")
-  return await Visa.find({
-    
-  });
+  console.log("Fetching all visa records without filters...");
+  const records = await Visa.find();
+  console.log("Visa records found:", records);
+  return records;
 };
 
 module.exports = {
